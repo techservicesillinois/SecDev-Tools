@@ -5,4 +5,4 @@ This repository holds tools and reference materials needed by the Cybersecurity 
 This repository may, at some future date, become fully public, or split into public and private resource sets.
 
 But for now, this is a space to park any playbooks that are not directly used for incident response.
-***Playbooks used in incident reponse belong in SecOps-Tools.***
+***Playbooks used in incident response belong in SecOps-Tools.***
