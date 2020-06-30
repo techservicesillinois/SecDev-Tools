@@ -4,6 +4,11 @@ Plaster is an open source scaffolding framework written in PowerShell. It can be
 While this was designed with PowerShell in mind it can be used to create any plain text files.
 
 # How do I use this?
+First you will need to install Plaster from the [PSGallery](https://www.powershellgallery.com/packages/Plaster)
+```
+Install-Module -Name Plaster
+```
+
 Every template is going to provide a different output but the general use case is the follow:
 ```
 Invoke-Plaster -TemplatePath '.\MyTemplate\' -DestinationPath '.\MyProjectDir\'
