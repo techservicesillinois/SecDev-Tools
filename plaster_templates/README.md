@@ -9,7 +9,7 @@ First you will need to install Plaster from the [PSGallery](https://www.powershe
 Install-Module -Name Plaster
 ```
 
-Every template is going to provide a different output but the general use case is the follow:
+Every template is going to provide a different output but the general use case is the following:
 ```
 Invoke-Plaster -TemplatePath '.\MyTemplate\' -DestinationPath '.\MyProjectDir\'
 ```
