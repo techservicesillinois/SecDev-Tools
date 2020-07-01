@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<plasterManifest schemaVersion="1.1"
+                 templateType="Project"
+                 xmlns="http://www.microsoft.com/schemas/PowerShell/Plaster/v1">
+  <metadata>
+    <name>NewNCSALicense</name>
+    <id>183cef84-8ac3-4858-b28b-831d59a5f0b2</id>
+    <version>1.0.0</version>
+    <title>New NCSA License</title>
+    <description>Creates a new NCSA License</description>
+    <author>Mike Kletz</author>
+    <tags>NCSA, License</tags>
+  </metadata>
+  <parameters>
+      <parameter name='Author'
+                   type='choice'
+                   prompt='Select authoring team'
+                   default='0'
+                   store='text'>
+            <choice label='Cybersecurity &amp;Engineering'
+                        help="Cybersecurity Engineering"
+                        value="Cybersecurity Engineering"/>
+            <choice label='Cybersecurity &amp;Development'
+                        help="Cybersecurity Development"
+                        value="Cybersecurity Development"/>
+      </parameter>
+
+      <parameter name='RepoURL'
+                   type='text'
+                   prompt='Enter the git repository URL'/>
+  </parameters>
+
+  <content>
+        <templateFile source='LICENSE'
+                      destination='LICENSE'/>
+        <message>
+
+Your new NCSA License has been created.
+
+        </message>
+  </content>
+</plasterManifest>
