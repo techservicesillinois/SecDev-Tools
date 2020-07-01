@@ -34,9 +34,26 @@
                         value="Cybersecurity Development"/>
       </parameter>
 
+      <parameter name='PSversion'
+                   type='choice'
+                   prompt='Select minimum PS version supported'
+                   default='1'
+                   store='text'>
+            <choice label='&amp;5.1'
+                        help="Windows PowerShell"
+                        value="5.1"/>
+            <choice label='&amp;7.0'
+                        help="PowerShell"
+                        value="7.0"/>
+      </parameter>
+
       <parameter name='RepoURL'
                    type='text'
                    prompt='Enter the git repository URL'/>
+
+      <parameter name='Description'
+                   type='text'
+                   prompt='Enter a description of the module.'/>
 
         <parameter name='Editor'
                    type='choice'
@@ -55,29 +72,24 @@
   <content>
         <message>&#10;&#10;Scaffolding your PowerShell Module...&#10;&#10;&#10;</message>
 
-        <newModuleManifest destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psd1'
-                           moduleVersion='$PLASTER_PARAM_Version'
-                           rootModule='${PLASTER_PARAM_ModuleName}.psm1'
-                           companyName='The University of Illinois'
-                           author='${PLASTER_PARAM_Author}'
-                           encoding='UTF8-NoBOM'
-                           openInEditor="true"/>
+        <templateFile source='Manifest.psd1'
+                      destination='src\${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psd1'/>
 
         <file source='Module.psm1'
-              destination='${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psm1'
+              destination='src\${PLASTER_PARAM_ModuleName}\${PLASTER_PARAM_ModuleName}.psm1'
               openInEditor="true"/>
 
         <templateFile source='README.md'
               destination='README.md'/>
 
         <file source='.gitkeep'
-              destination='${PLASTER_PARAM_ModuleName}\functions\public\.gitkeep'/>
+              destination='src\${PLASTER_PARAM_ModuleName}\functions\public\.gitkeep'/>
       
         <file source='.gitkeep'
-              destination='${PLASTER_PARAM_ModuleName}\functions\private\.gitkeep'/>
+              destination='src\${PLASTER_PARAM_ModuleName}\functions\private\.gitkeep'/>
 
         <file source='.gitkeep'
-              destination='${PLASTER_PARAM_ModuleName}\dscresources\.gitkeep'/>
+              destination='src\${PLASTER_PARAM_ModuleName}\dscresources\.gitkeep'/>
 
         <templateFile source='test\Module.T.ps1'
                       destination='test\${PLASTER_PARAM_ModuleName}.Tests.ps1'/>
