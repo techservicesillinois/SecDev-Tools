@@ -16,7 +16,7 @@ ModuleVersion = '<%=$PLASTER_PARAM_Version%>'
 # CompatiblePSEditions = @()
 
 # ID used to uniquely identify this module
-GUID = '<%=$PLASTER_PARAM_Guid%>'
+GUID = '<%=$PLASTER_Guid1%>'
 
 # Author of this module
 Author = '<%=$PLASTER_PARAM_Author%>'
