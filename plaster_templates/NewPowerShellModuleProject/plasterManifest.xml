@@ -70,11 +70,14 @@
         <templateFile source='README.md'
               destination='README.md'/>
 
-        <file source='functions\public\.gitkeep'
+        <file source='.gitkeep'
               destination='${PLASTER_PARAM_ModuleName}\functions\public\.gitkeep'/>
       
-        <file source='functions\private\.gitkeep'
+        <file source='.gitkeep'
               destination='${PLASTER_PARAM_ModuleName}\functions\private\.gitkeep'/>
+
+        <file source='.gitkeep'
+              destination='${PLASTER_PARAM_ModuleName}\dscresources\.gitkeep'/>
 
         <templateFile source='test\Module.T.ps1'
                       destination='test\${PLASTER_PARAM_ModuleName}.Tests.ps1'/>
