@@ -93,10 +93,10 @@
               source='editor\VSCode\tasks.json'
               destination='.vscode\tasks.json'/>
 
-        <templateFile source='.github\workflows\pester.yml'
+        <file source='.github\workflows\pester.yml'
               destination='.github\workflows\pester.yml'/>
 
-        <file source='.github\workflows\scriptanalyzer.yml'
+        <templateFile source='.github\workflows\scriptanalyzer.yml'
               destination='.github\workflows\scriptanalyzer.yml'/>
 
         <requireModule name="Pester" minimumVersion="4.0.3"
