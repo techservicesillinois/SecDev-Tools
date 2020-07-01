@@ -22,9 +22,17 @@
                    default='0.0.1'/>
 
       <parameter name='Author'
-                   type='text'
-                   prompt='Enter the module author'
-                   default='Cybersecurity Engineering'/>
+                   type='choice'
+                   prompt='Select authoring team'
+                   default='0'
+                   store='text'>
+            <choice label='Cybersecurity &amp;Engineering'
+                        help="Cybersecurity Engineering"
+                        value="Cybersecurity Engineering"/>
+            <choice label='Cybersecurity &amp;Development'
+                        help="Cybersecurity Development"
+                        value="Cybersecurity Development"/>
+      </parameter>
 
       <parameter name='RepoURL'
                    type='text'
