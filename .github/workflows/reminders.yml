@@ -1,0 +1,16 @@
+name: PRs reviews reminder
+
+on:
+  schedule:
+    # Every weekday every 2 hours during working hours, send notification
+    - cron: "0 8-17/2 * * 1-5"
+
+jobs:
+  pr-reviews-reminder:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: davideviolante/pr-reviews-reminder-action@microsoftteams
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      with:
+        webhook-url: 'https://outlook.office.com/webhook/293d6f51-9166-4f6f-b6cd-f3335c630c02@44467e6f-462c-4ea2-823f-7800de5434e3/IncomingWebhook/edd84589d71b4f59bc683857f0b8a46f/02c49ffa-62b0-4953-8d7d-14337307eca2' # Required
