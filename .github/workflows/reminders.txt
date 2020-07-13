@@ -2,7 +2,7 @@ name: PRs reviews reminder
     
 on:
   schedule:
-    # Every weekday every 2 hours during working hours, send notification
+    # Every weekday every 2 hours during working hours, send notification. Blah Blah Blah
     - cron: "*/15 * * * *"
 
 jobs:
