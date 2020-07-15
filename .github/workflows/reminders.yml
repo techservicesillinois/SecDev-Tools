@@ -9,8 +9,9 @@ jobs:
   pr-reviews-reminder:
     runs-on: ubuntu-latest
     steps:
-    - uses: edthedev/pr-reviews-reminder-action@master
+    - uses: DavideViolante/pr-reviews-reminder-action@v1.3.0
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       with:
         webhook-url: ${{ secrets.TEAMS_WEBHOOK }}
+        provider: 'msteams'
