@@ -1,4 +1,4 @@
-Copyright (c) 2020 University of Illinois.  All rights reserved.
+Copyright (c) <%=$PLASTER_Year%> University of Illinois.  All rights reserved.
 
 
 Developed by: <%=$PLASTER_PARAM_Author%>
