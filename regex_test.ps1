@@ -21,10 +21,10 @@ Foreach($Test in $TestData){
     $ShouldMatch = [Boolean][int]$Test.ShouldMatch
     
     if($ShouldMatch){
-        [String]$Verb = 'Matches'
+        [String]$Message = "Matches '$($Test.String)'"
     }
     Else{
-        [String]$Verb = 'Ignores'
+        [String]$Message = "Ignores '$($Test.String)'"
     }
 
     if($Pattern.Match($Test.String).Success -eq $ShouldMatch){
@@ -34,5 +34,5 @@ Foreach($Test in $TestData){
         $ForegroundColor = 'Red'
     }
 
-    Write-Host -Object "$($Verb) '$($Test.String)'" -ForegroundColor $ForegroundColor
+    Write-Host -Object $Message -ForegroundColor $ForegroundColor
 }
