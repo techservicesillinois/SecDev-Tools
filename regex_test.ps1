@@ -19,13 +19,22 @@
 [System.Collections.ArrayList]$TestData = @()
 $TestData += Import-Csv -Path "$($PSScriptRoot)\testdata.csv" | Where-Object -FilterScript {$_.String} #Filter out blank lines
 
-Describe "$($Pattern.ToString())"{    
-    Foreach($Test in $TestData){      
-        $ShouldMatch = [Boolean][int]$Test.ShouldMatch
-        [String]$Verb = if($ShouldMatch){'Matches'}Else{'Ignores'}
-
-        It "$($Verb) '$($Test.String)'"{
-            $Pattern.Match($Test.String).Success | Should -Be $ShouldMatch
-        }
+Foreach($Test in $TestData){      
+    $ShouldMatch = [Boolean][int]$Test.ShouldMatch
+    
+    if($ShouldMatch){
+        [String]$Verb = 'Matches'
     }
+    Else{
+        [String]$Verb = 'Ignores'
+    }
+
+    if($Pattern.Match($Test.String).Success -eq $ShouldMatch){
+        $ForegroundColor = 'Green'
+    }
+    else{
+        $ForegroundColor = 'Red'
+    }
+
+    Write-Host -Object "$($Verb) '$($Test.String)'" -ForegroundColor $ForegroundColor
 }
