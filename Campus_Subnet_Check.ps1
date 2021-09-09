@@ -33,8 +33,7 @@ $CampusSubnets = (
 )
 
 foreach($SubnetStr in $CampusSubnets){
-    [System.Net.IPAddress]$Subnet = $SubnetStr.Split('/')[0]
-    $MaskLength = $SubnetStr.Split('/')[1]
+    [System.Net.IPAddress]$Subnet,$MaskLength = $SubnetStr.Split('/')
     $CIDR_Bits = ('1' * $MaskLength).PadRight(32, "0")
     $Octets = $CIDR_Bits -split '(.{8})' -ne ''
     $Mask = ($Octets | ForEach-Object -Process {[Convert]::ToInt32($_, 2) }) -join '.'
