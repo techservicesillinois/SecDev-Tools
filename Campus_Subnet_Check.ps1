@@ -7,6 +7,7 @@
 $Path = "C:\file.csv"
 $IPs = Import-Csv -Path $Path
 
+# https://answers.uillinois.edu/47572
 $CampusSubnets = (
     "72.36.64.0/18",
     "128.174.0.0/16",
